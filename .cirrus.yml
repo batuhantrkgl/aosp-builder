@@ -28,6 +28,6 @@ task:
     chmod_script: # Actual chmod script foreground
       - ./chmod.sh # chmod script to run
     BuildGSI_script: # Actual build script foreground
-      - ./gsi.sh # Build script to run
+      - ./build.sh # Build script to run
     Upload_script: 
       - ./upload.sh
