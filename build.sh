@@ -36,7 +36,11 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 
 tg_sendText "Downloading trees"
 git clone https://github.com/batuhantrkgl/android_device_samsung_j7y17lte -b crdroid device/samsung/j7y17lte
-git clone https://github.com/batuhantrkgl/android_device_samsung_j7y17lte -b crdroi vendor/samsung/j7y17lte
+git clone https://github.com/batuhantrkgl/android_vendor_samsung_j7y17lte -b crdroid vendor/samsung/j7y17lte
+git clone https://github.com/samsungexynos7870/android_device_samsung_universal7870-common -b crdroid device/samsung/universal7870-common
+git clone https://github.com/samsungexynos7870/android_vendor_samsung_universal7870-common -b common vendor/samsung/universal7870-common
+git clone https://github.com/samsungexynos7870/android_hardware_samsung -b lineage-17.1 hardware/samsung
+git clone https://github.com/samsungexynos7870/android_kernel_samsung_exynos7870 -b aosp kernel/samsung/exynos7870
 
 tg_sendText "Lunching"
 # Normal build steps
