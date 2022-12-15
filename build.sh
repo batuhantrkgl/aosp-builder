@@ -35,20 +35,20 @@ repo init --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j6 || repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 tg_sendText "Downloading trees"
-git clone https://github.com/MizuNotCool/android_device_suzuhime device/samsung/a10s
-git clone https://github.com/MizuNotCool/suzu_vendor_samsung_a10s vendor/samsung/a10s
+git clone https://github.com/batuhantrkgl/android_device_samsung_j7y17lte -b crdroid device/samsung/j7y17lte
+git clone https://github.com/batuhantrkgl/android_device_samsung_j7y17lte -b crdroi vendor/samsung/j7y17lte
 
 tg_sendText "Lunching"
 # Normal build steps
 . build/envsetup.sh
-lunch lineage_a10s-userdebug
+lunch lineage_j7y17lte-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
-export KBUILD_BUILD_USER=ItzKaguya
-export KBUILD_BUILD_HOST=ItzKaguya-PC
-export BUILD_USERNAME=ItzKaguya
-export BUILD_HOSTNAME=ItzKaguya-PC
+export KBUILD_BUILD_USER=Batuhantrkgl
+export KBUILD_BUILD_HOST=Batuhantrkgl-PC
+export BUILD_USERNAME=Batuhantrkgl
+export BUILD_HOSTNAME=Batuhantrkgl-PC
 export WITH_SU=false
 export WITH_GMS=false
 export TZ=Asia/Makassar
@@ -66,7 +66,7 @@ tg_sendText "Starting Compilation.."
 make bacon -j$(nproc --all) | tee build.txt
 
 tg_sendText "Build completed! Uploading rom"
-curl -T ./out/target/product/a10s/*UNOFFICIAL*.zip temp.sh | tee download-link.txt
+curl -T ./out/target/product/j7y17lte/*UNOFFICIAL*.zip temp.sh | tee download-link.txt
 
 (ccache -s && echo " " && free -h && echo " " && df -h && echo " " && ls -a out/target/product/a10s/) | tee final_monitor.txt
 tg_sendFile "final_monitor.txt"
